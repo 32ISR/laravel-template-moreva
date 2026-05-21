@@ -7,12 +7,13 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
 </head>
 <body>
-
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
         <a class="navbar-brand" href="{{ route('dashboard') }}">TaskFlow</a>
         @auth
         <div class="d-flex align-items-center gap-3">
+            <a href="{{ route('tasks.index') }}" class="text-white text-decoration-none">Задачи</a>
+            <a href="{{ route('categories.index') }}" class="text-white text-decoration-none">Категории</a>
             @if(auth()->user()->isAdmin())
                 <span class="badge bg-warning text-dark">Admin</span>
             @endif
